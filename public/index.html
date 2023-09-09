@@ -1,7 +1,7 @@
-<script type="module" src="./server/server.js"></script>
-<script type="module" src="./main.js"></script>
-
+<script defer type="module" src="./server/server.js"></script>
+<script defer type="module" src="./main.js"></script>
 <script src="https://cdn.tailwindcss.com"></script>
+
 <div>
   <head>
 	<title>Link Minifier</title>
@@ -21,6 +21,12 @@
 			>
 			  Login
 			</button>
+			  <button
+					  id ="logout_button" class="transition hover:bg-pink-400 duration-500 bg-yellow-300 text-white px-4 py-2 rounded-md ml-8"
+			  style="visibility: hidden">
+				  Logout
+			  </button>
+
 		  </li>
 		</ul>
 	  </nav>
@@ -33,7 +39,7 @@
 		  <input id="normal_link_input" placeholder="Link..." type="text" class="text-black bg-white-400"></input>
 		  <button id="minify_button" class="transition hover:bg-pink-400 duration-500 bg-yellow-300 text-white px-4 py-2 rounded-md ml-8">
 			Minify!</button>
-
+		  <div id ="where_put_mini_link">Mini Link:</div>
 		<h2></h2>
 	  </div>
 	</div>

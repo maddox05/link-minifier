@@ -12,7 +12,7 @@ async function mini_link_redirect(){
             window.location.href = docSnapshot.data().normal_link;
         }
         else{
-            console.log("doc does not exist")
+            console.log("how am i here? doc does not exist")
         }
 
 
