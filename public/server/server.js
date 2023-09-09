@@ -4,7 +4,7 @@ import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.3.1/firebase
 import { getFirestore, collection, serverTimestamp, addDoc, query, onSnapshot, getDocs, orderBy, doc, setDoc } from "https://www.gstatic.com/firebasejs/10.3.1/firebase-firestore.js";
 import { getAuth, GoogleAuthProvider, signInWithPopup, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.3.1/firebase-auth.js";
 
-//treating this file like a nodejs file
+//treating this file like a nodejs file, kinda
 
 import { firebaseConfig } from "../private/firebase_config.js";
 
@@ -34,7 +34,6 @@ async function mini_link_checker(normal_link, user_mini_link, userid){
         const what_items = await query(what_collection, orderBy("timestamp", "desc"));
         getDocs(what_items)
             .then((snapshot) =>{
-                console.log(snapshot.docs.length); // length works
                 if(!go_through_docs_and_check_if_something_is_in_it(snapshot.docs, user_mini_link)){ // if docs alr have minilink in it
                     console.log("not sent, doc already exists")
                     return false;
