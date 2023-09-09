@@ -20,6 +20,7 @@ const what_collection = collection(db, "mini_links"); // collection, (database, 
 
 
 function log_in(){ // to go to frontend
+    console.log("log in");
     const google_provider = new GoogleAuthProvider();
     signInWithPopup(auth, google_provider)
         .then(result =>{
@@ -29,6 +30,9 @@ function log_in(){ // to go to frontend
             console.log("error",error);
         });
 }
+const button1 = document.getElementById("button1");
+button1.addEventListener("click", log_in);
+
 async function mini_link_checker(normal_link, user_mini_link, userid){
     if(userid !== null){
         const what_items = await query(what_collection, orderBy("timestamp", "desc"));
@@ -75,7 +79,7 @@ async function mini_link_checker(normal_link, user_mini_link, userid){
 }
 mini_link_checker("google.com", "hjjn84h", "notnull");
 
-function mini_link_redirect(mini_link(can get from video i watched)){
+function mini_link_redirect(mini_link){
      if(window.location.href.includes("maddox.boo/")){
          let doc_name = window.location.href.toString();
          doc_name = doc_name.replace("https://maddox.boo/", "");
