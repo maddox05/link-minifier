@@ -1,7 +1,7 @@
 // Purpose: Firebase configuration and initialization
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.3.1/firebase-app.js";
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.3.1/firebase-analytics.js";
-import { getFirestore, collection, serverTimestamp, addDoc, query, onSnapshot, getDocs, orderBy, doc, setDoc } from "https://www.gstatic.com/firebasejs/10.3.1/firebase-firestore.js";
+import { getFirestore, collection, serverTimestamp, addDoc, query, onSnapshot, getDocs, getDoc, orderBy, doc, setDoc } from "https://www.gstatic.com/firebasejs/10.3.1/firebase-firestore.js";
 import { getAuth, GoogleAuthProvider, signInWithPopup, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.3.1/firebase-auth.js";
 
 //treating this file like a nodejs file, kinda
@@ -13,7 +13,7 @@ import { firebaseConfig } from "../private/firebase_config.js";
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 const db = getFirestore(app);
-const auth = getAuth(app);
+export const auth = getAuth(app);
 console.log("Firebase initialized");
 
 const what_collection = collection(db, "mini_links"); // collection, (database, collection name) // what collection of documents I want to look at
@@ -33,7 +33,7 @@ function log_in(){ // to go to frontend
 const login_button = document.getElementById("login_button");
 login_button.addEventListener("click", log_in);
 
-async function mini_link_checker(normal_link, user_mini_link, userid){
+export async function mini_link_checker(normal_link, user_mini_link, userid){
     if(userid !== null){
         const what_items = await query(what_collection, orderBy("timestamp", "desc"));
         getDocs(what_items)
@@ -77,12 +77,23 @@ async function mini_link_checker(normal_link, user_mini_link, userid){
     // returns true if link was created
     // returns false if link was not created
 }
-mini_link_checker("google.com", "hjjn84h", "notnull");
+// mini_link_checker("google.com", "hjjn84h", "notnull"); test
 
-function mini_link_redirect(mini_link){
-     if(window.location.href.includes("maddox.boo/")){
+async function mini_link_redirect(){
+     if(window.location.href.includes("https://maddox.boo/")){
          let doc_name = window.location.href.toString();
          doc_name = doc_name.replace("https://maddox.boo/", "");
+         const docRef = doc(what_collection, doc_name);
+         const docSnapshot = await getDoc(docRef);
+         if(docSnapshot.exists()){
+                window.location.href = docSnapshot.data().normal_link;
+         }
+         else{
+                console.log("doc does not exist")
+         }
+
+
+
          //go into database, find doc with doc_name and then go to normal link with that doc
 
      }
@@ -98,3 +109,4 @@ function go_through_docs_and_check_if_something_is_in_it(docs_array, what_it_can
         }
     return true;
 }
+mini_link_redirect();

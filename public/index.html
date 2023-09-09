@@ -1,4 +1,6 @@
 <script defer type="module" src="./server/server.js"></script>
+<script defer type="module" src="./main.js"></script>
+
 <script src="https://cdn.tailwindcss.com"></script>
 <div>
   <head>
@@ -26,13 +28,12 @@
 	<div class="flex justify-center p-20">
 	  <div class="p-24 bg-gray-500 w-1/2">
 		<p></p>
-		<form>
+
 		  <label>Link you want to minify: </label>
-		  <input type="text" class="text-black bg-white-400"></input>
-		  <button class="transition hover:bg-pink-400 duration-500 bg-yellow-300 text-white px-4 py-2 rounded-md ml-8">
-			Minify!
-		  </button>
-		</form>
+		  <input id="normal_link_input" placeholder="Link..." type="text" class="text-black bg-white-400"></input>
+		  <button id="minify_button" class="transition hover:bg-pink-400 duration-500 bg-yellow-300 text-white px-4 py-2 rounded-md ml-8">
+			Minify!</button>
+
 		<h2></h2>
 	  </div>
 	</div>
