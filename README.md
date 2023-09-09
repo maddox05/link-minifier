@@ -1,34 +1,67 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Link Minifier
+
+
+Link Minifier is a simple and lightweight URL-shortening service that allows you to create short links from long URLs. It's perfect for sharing links on social media, in emails, or anywhere you need to save space and make your links more user-friendly.
+
+## Features
+
+- Shorten long URLs with a single click.
+- Customize your short links with easy-to-remember aliases. (coming soon)
+- Secure and reliable link management.
 
 ## Getting Started
 
-First, run the development server:
+To get started with Link Minifier, follow these simple steps:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+1. **Clone the repository**
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- git clone https://github.com/maddox05/link-minifier.git
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+  
+2. **Install dependencies**
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- no dependencies
 
-## Learn More
 
-To learn more about Next.js, take a look at the following resources:
+## Usage
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Shorten a Link
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+1. Visit the <a href ="https://maddox.boo">Link Minifier</a> web interface. 
+2. Paste your long URL into the input field.
+3. Click the "Minify" button.
+4. Your shortened link will be generated and displayed below.
 
-## Deploy on Vercel
+<!--### Customize a Short Link
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1. After shortening a link, click the "Customize" button.
+2. Enter a custom alias for your link (if available).
+3. Click the "Save" button. -->
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+<!--### Track Clicks
+
+- Each shortened link comes with a statistics page where you can track the number of clicks on that link. Simply click the "Stats" button next to a link to access this information.
+-->
+## Contributing
+
+Contributions are welcome! If you have any ideas, bug fixes, or new features you'd like to add, please follow these steps:
+
+1. Fork the repository.
+2. Create a new branch for your feature or bug fix.
+3. Make your changes and commit them with clear and concise commit messages.
+4. Push your changes to your fork.
+5. Submit a pull request to the main repository.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Acknowledgments
+
+- This project was inspired by the need for a simple and self-hosted URL shortening service.
+- Thanks to <a href="https://github.com/CtrlAltDelight">**CtrlAltDelight**</a> for all the help!
+
+---
+
+Happy link shortening with Link Minifier! 😄
+
