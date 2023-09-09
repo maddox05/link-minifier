@@ -31,26 +31,30 @@ function log_in(){ // to go to frontend
         });
 }
 onAuthStateChanged(auth, user =>{
-    if(user){
-        const logout_button = document.getElementById("logout_button");
-        logout_button.style.visibility = "visible";
-        login_button.style.visibility = "hidden";
-        logout_button.addEventListener("click", () => {
-            signOut(auth)
-                .then(() => {
-                    console.log("signed out");
-                })
-                .catch((error) => {
-                    console.log("error", error);
-                });
-        });
-        console.log("logged in");
+    try {
+        if (user) {
+            const logout_button = document.getElementById("logout_button");
+            logout_button.style.visibility = "visible";
+            login_button.style.visibility = "hidden";
+            logout_button.addEventListener("click", () => {
+                signOut(auth)
+                    .then(() => {
+                        console.log("signed out");
+                    })
+                    .catch((error) => {
+                        console.log("error", error);
+                    });
+            });
+            console.log("logged in");
 
+        } else {
+            logout_button.style.visibility = "hidden";
+            login_button.style.visibility = "visible";
+            console.log("not logged in");
+        }
     }
-    else{
-        logout_button.style.visibility = "hidden";
-        login_button.style.visibility = "visible";
-        console.log("not logged in");
+    catch {
+        console.log("redirecting soon or fatal error");
     }
 });
 const login_button = document.getElementById("login_button");
