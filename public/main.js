@@ -1,4 +1,4 @@
-import {mini_link_checker} from "./server/server.js";
+import { db } from "./server/server.js";
 import {auth} from "./server/server.js";
 
 const normal_link_input = document.getElementById("normal_link_input");

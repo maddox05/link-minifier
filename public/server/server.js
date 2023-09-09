@@ -12,7 +12,7 @@ import { firebaseConfig } from "../private/firebase_config.js";
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
-const db = getFirestore(app);
+export const db = getFirestore(app);
 export const auth = getAuth(app);
 console.log("Firebase initialized");
 
@@ -31,7 +31,10 @@ function log_in(){ // to go to frontend
         });
 }
 const login_button = document.getElementById("login_button");
-login_button.addEventListener("click", log_in);
+if(login_button !== null){
+    login_button.addEventListener("click", log_in);
+
+}
 
 export async function mini_link_checker(normal_link, user_mini_link, userid){
     if(userid !== null){
@@ -79,28 +82,6 @@ export async function mini_link_checker(normal_link, user_mini_link, userid){
 }
 // mini_link_checker("google.com", "hjjn84h", "notnull"); test
 
-async function mini_link_redirect(){
-     if(window.location.href.includes("https://maddox.boo/")){
-         let doc_name = window.location.href.toString();
-         doc_name = doc_name.replace("https://maddox.boo/", "");
-         const docRef = doc(what_collection, doc_name);
-         const docSnapshot = await getDoc(docRef);
-         if(docSnapshot.exists()){
-                window.location.href = docSnapshot.data().normal_link;
-         }
-         else{
-                console.log("doc does not exist")
-         }
-
-
-
-         //go into database, find doc with doc_name and then go to normal link with that doc
-
-     }
-     else{
-         console.log("not valid link")
-     }
-}
 function go_through_docs_and_check_if_something_is_in_it(docs_array, what_it_cant_equal){
     for(let i=0; i<docs_array.length; i++)
         if(docs_array[i].id === what_it_cant_equal){
@@ -109,6 +90,4 @@ function go_through_docs_and_check_if_something_is_in_it(docs_array, what_it_can
         }
     return true;
 }
-if(!window.location.href.includes("index.html") && !window.location.href.includes("https://maddox.boo/")){
-    mini_link_redirect();
-}
+
