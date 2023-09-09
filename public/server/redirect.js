@@ -24,6 +24,9 @@ async function mini_link_redirect(){
         console.log("not valid link")
     }
 }
-if(!window.location.href.includes("index.html") && !window.location.href.includes("https://maddox.boo/")){
+if(!window.location.href.includes("index.html")){
     mini_link_redirect();
+}
+else{
+    console.log("window includes index.html")
 }
