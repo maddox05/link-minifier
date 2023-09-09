@@ -12,7 +12,7 @@ async function mini_link_redirect(){
             window.location.href = docSnapshot.data().normal_link;
         }
         else{
-            console.log("doc does not exist")
+            console.log("how am i here? doc does not exist")
         }
 
 
@@ -24,6 +24,9 @@ async function mini_link_redirect(){
         console.log("not valid link")
     }
 }
-if(!window.location.href.includes("index.html") && !window.location.href.includes("https://maddox.boo/")){
+if(!window.location.href.includes("index.html")){
     mini_link_redirect();
+}
+else{
+    console.log("window includes index.html")
 }
