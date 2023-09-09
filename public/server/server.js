@@ -75,12 +75,15 @@ async function mini_link_checker(normal_link, user_mini_link, userid){
 }
 mini_link_checker("google.com", "hjjn84h", "notnull");
 
-function mini_link_redirect(){
+function mini_link_redirect(mini_link(can get from video i watched)){
      if(window.location.href.includes("maddox.boo/")){
-         //redirect
+         let doc_name = window.location.href.toString();
+         doc_name = doc_name.replace("https://maddox.boo/", "");
+         //go into database, find doc with doc_name and then go to normal link with that doc
+
      }
      else{
-         console.log("not valid")
+         console.log("not valid link")
      }
 }
 function go_through_docs_and_check_if_something_is_in_it(docs_array, what_it_cant_equal){
