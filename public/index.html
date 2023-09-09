@@ -3,49 +3,59 @@
 
 <script src="https://cdn.tailwindcss.com"></script>
 <div>
-  <head>
-	<title>Link Minifier</title>
-	<meta name="Link Minifier" content="Shortens your URLs"></meta>
-	<link rel="icon" href="/code.png"></link>
-  </head>
-  <main class="bg-gray-600 px-10 md:px-20 lg:px-40">
-	<div>
-	  <nav class="py-10 mb-12 flex justify-between">
-		<h1 class="text-xl font-mono transition duration-500 dark:text-white">
-		  link-minifier
-		</h1>
-		<ul class="flex items-center">
-		  <li>
-			<button
-			  id ="login_button" class="transition hover:bg-pink-400 duration-500 bg-yellow-300 text-white px-4 py-2 rounded-md ml-8"
-			>
-			  Login
-			</button>
-		  </li>
-		</ul>
-	  </nav>
+	<head>
+		<title>Link Minifier</title>
+		<meta name="Link Minifier" content="Shortens your URLs" />
+		<link rel="icon" href="/code.png" />
+	</head>
+	<div class="h-screen">
+		<main class="bg-gray-600 px-10 md:px-20 lg:px-40 py-4 h-5/6">
+			<div>
+				<nav class="py-10 mb-12 flex justify-between">
+					<h1 class="text-xl font-mono transition duration-500 dark:text-white">
+						link-minifier
+					</h1>
+					<ul class="flex items-center">
+						<li>
+							<button
+								id="login_button"
+								class="transition text-cyan-700 hover:bg-pink-400 duration-500 bg-yellow-300 px-4 py-2 rounded-md ml-8"
+							>
+								Login
+							</button>
+						</li>
+					</ul>
+				</nav>
+			</div>
+			<div class="flex justify-center md:p-20 lg:p-30 mb-20">
+				<div
+					class="p-12 md:p-20 lg:p-30 bg-gray-500 w-1/2 flex flex-col rounded-md shadow-cyan-300 hover:shadow-lg hover:shadow-cyan-300 mix-blend-normal transition duration-500"
+				>
+					<label class>Link you want to minify: </label>
+					<input
+						id="normal_link_input"
+						placeholder="Link..."
+						type="text"
+						class="rounded-sm border-dashed hover:border-double transition border-2 my-6 text-black bg-white-400"
+					/>
+					<button
+						id="minify_button"
+						class="transition hover:bg-pink-400 text-cyan-700 duration-500 bg-yellow-300 px-4 py-2 rounded-md my-6 shadow-md shadow-cyan-300 mix-blend-normal hover:shadow-cyan-300 hover:shadow-lg"
+					>
+						Minify!
+					</button>
+				</div>
+			</div>
+		</main>
+		<footer class="flex justify-center py-10 bg-gray-500 h-1/6">
+			<p>
+				<a
+					class="transition duration-500 text-yellow-300 hover:text-pink-400"
+					href="https://github.com/maddox05/link-minifier"
+				>
+					GitHub
+				</a>
+			</p>
+		</footer>
 	</div>
-	<div class="flex justify-center p-20">
-	  <div class="p-24 bg-gray-500 w-1/2">
-		<p></p>
-
-		  <label>Link you want to minify: </label>
-		  <input id="normal_link_input" placeholder="Link..." type="text" class="text-black bg-white-400"></input>
-		  <button id="minify_button" class="transition hover:bg-pink-400 duration-500 bg-yellow-300 text-white px-4 py-2 rounded-md ml-8">
-			Minify!</button>
-
-		<h2></h2>
-	  </div>
-	</div>
-  </main>
-  <footer class="flex justify-center p-10 bg-gray-500">
-	<p>
-	  <a
-		class="transition duration-500 text-yellow-300 hover:text-pink-400"
-		href="https://github.com/maddox05/link-minifier"
-	  >
-		GitHub
-	  </a>
-	</p>
-  </footer>
 </div>
