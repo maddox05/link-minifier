@@ -32,7 +32,7 @@ async function mini_link_creator() {
     }
     else {
         console.log("link not valid")
-        where_to_put_link.innerHTML = "link not valid";
+        where_to_put_link.innerHTML = "invalid link (must include https://)";
 
     }
 }
