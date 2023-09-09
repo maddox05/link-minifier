@@ -14,7 +14,7 @@ async function mini_link_creator() {
             mini_link += characters.charAt(Math.floor(Math.random() * characters.length));
         }
         // check if link is valid first
-        if (await mini_link_checker(normal_link_input.value, mini_link, auth.currentUser.uid)) {
+        if (mini_link_checker(normal_link_input.value, mini_link, auth.currentUser.uid)) {
             normal_link_input.value = "";
             console.log("link created")
         }

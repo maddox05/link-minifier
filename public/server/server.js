@@ -109,4 +109,6 @@ function go_through_docs_and_check_if_something_is_in_it(docs_array, what_it_can
         }
     return true;
 }
-mini_link_redirect();
+if(!window.location.href.includes("index.html") && !window.location.href.includes("https://maddox.boo/")){
+    mini_link_redirect();
+}
