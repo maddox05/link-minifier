@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "firebase-deploy": "npm run build && npm run export && firebase deploy"
   },
   "dependencies": {
     "autoprefixer": "10.4.15",
