@@ -1,7 +1,7 @@
 // Purpose: Firebase configuration and initialization
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.3.1/firebase-app.js";
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.3.1/firebase-analytics.js";
-import { getFirestore, collection, serverTimestamp, addDoc, query, onSnapshot, getDocs, orderBy } from "https://www.gstatic.com/firebasejs/10.3.1/firebase-firestore.js";
+import { getFirestore, collection, serverTimestamp, addDoc, query, onSnapshot, getDocs, orderBy, doc, setDoc } from "https://www.gstatic.com/firebasejs/10.3.1/firebase-firestore.js";
 import { getAuth, GoogleAuthProvider, signInWithPopup, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.3.1/firebase-auth.js";
 
 //treating this file like a nodejs file
@@ -29,12 +29,14 @@ function log_in(){ // to go to frontend
             console.log("error",error);
         });
 }
-function mini_link_checker(normal_link, user_mini_link, userid){
+async function mini_link_checker(normal_link, user_mini_link, userid){
     if(userid !== null){
-        const query = query(what_collection, orderBy("timestamp", "desc"));
-        getDocs(query)
+        const what_items = await query(what_collection, orderBy("timestamp", "desc"));
+        getDocs(what_items)
             .then((snapshot) =>{
-                if(snapshot.docs.includes(user_mini_link)){ // if docs alr have minilink in it
+                console.log(snapshot.docs.length); // length works
+                if(!go_through_docs_and_check_if_something_is_in_it(snapshot.docs, user_mini_link)){ // if docs alr have minilink in it
+                    console.log("not sent, doc already exists")
                     return false;
                 }
                 else{// else add the doc
@@ -44,7 +46,8 @@ function mini_link_checker(normal_link, user_mini_link, userid){
                         userid: userid,
                         timestamp: serverTimestamp()
                     }
-                    addDoc(what_collection, data)
+                    const docRef = doc(what_collection, user_mini_link);
+                    setDoc(docRef, data)
                         .then((result)=>{
                             console.log("sent!")
                             return true;
@@ -71,6 +74,8 @@ function mini_link_checker(normal_link, user_mini_link, userid){
     // returns true if link was created
     // returns false if link was not created
 }
+mini_link_checker("google.com", "hjjn84h", "notnull");
+
 function mini_link_redirect(){
      if(window.location.href.includes("maddox.boo/")){
          //redirect
@@ -78,4 +83,12 @@ function mini_link_redirect(){
      else{
          console.log("not valid")
      }
+}
+function go_through_docs_and_check_if_something_is_in_it(docs_array, what_it_cant_equal){
+    for(let i=0; i<docs_array.length; i++)
+        if(docs_array[i].id === what_it_cant_equal){
+            console.log(docs_array[i].id)
+            return false;
+        }
+    return true;
 }
