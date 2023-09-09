@@ -30,8 +30,8 @@ function log_in(){ // to go to frontend
             console.log("error",error);
         });
 }
-const button1 = document.getElementById("button1");
-button1.addEventListener("click", log_in);
+const login_button = document.getElementById("login_button");
+login_button.addEventListener("click", log_in);
 
 async function mini_link_checker(normal_link, user_mini_link, userid){
     if(userid !== null){
