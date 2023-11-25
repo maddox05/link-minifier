@@ -18,13 +18,9 @@ To get started with Link Minifier, follow these simple steps:
     git clone https://github.com/maddox05/link-minifier.git
     ```
 
-```
-
-
 2. **Install dependencies**
 
-- `No dependencies`
-
+-   `No dependencies`
 
 ## Usage
 
@@ -52,12 +48,10 @@ This project is licensed under the [MIT License (click here for details)](LICENS
 
 ## Acknowledgments
 
-- This project was inspired by the need for a simple and self-hosted URL shortening service.
-- Thanks to [CtrlAltDelight](https://github.com/CtrlAltDelight) for all the help!
+-   This project was inspired by the need for a simple and self-hosted URL shortening service.
+-   Thanks to [CtrlAltDelight](https://github.com/CtrlAltDelight) for all the help!
 <!-- - Thanks to [Light Andy](https://github.com/LightAndy1) for the new style! -->
 
 ---
 
 Happy link shortening with Link Minifier! 😄
-
-```
