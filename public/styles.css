@@ -1,0 +1,15 @@
+h1 {
+	position: absolute;
+	top: 10%;
+	left: 8%;
+}
+
+#login_button {
+	position: absolute;
+	top: 10%;
+	right: 10%;
+}
+
+#logout_button {
+	visibility: hidden;
+}
