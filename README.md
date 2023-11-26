@@ -46,7 +46,7 @@ Contributions are welcome! If you have any ideas, bug fixes, or new features you
 Upon completing your initial contribution to this repository, kindly ensure to include your name and profile link within the Contributors.md file, adhering to the specified format:
 
 ```md
--   [name](link)
+- [name](link)
 ```
 
 ## License
