@@ -39,8 +39,15 @@ Contributions are welcome! If you have any ideas, bug fixes, or new features you
 1. Fork the repository.
 2. Create a new branch for your feature or bug fix.
 3. Make your changes and commit them with clear and concise commit messages.
-4. Push your changes to your fork.
-5. Submit a pull request to the main repository.
+4. Add your name and your GitHub profile link in `Contributors.md`.
+5. Push your changes to your fork.
+6. Submit a pull request to the main repository.
+
+Upon completing your initial contribution to this repository, kindly ensure to include your name and profile link within the Contributors.md file, adhering to the specified format:
+
+```md
+- [name](link)
+```
 
 ## License
 
