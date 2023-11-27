@@ -19,66 +19,57 @@
 		<link rel="mask-icon" href="./assets/code.png" color="#111" />
 		<link rel="stylesheet" href="./styles.css" />
 	</head>
-	<body class="bg-slate-900">
-		<div class="h-screen">
-			<main class="bg-slate-950 md:px-20 lg:px-40 py-4 h-5/6">
-				<div>
-					<nav class="py-10 mb-12 flex justify-between">
-						<h1
-							class="text-xl font-mono transition duration-500 text-white cursor-default"
-						>
-							link-minifier
-						</h1>
-						<ul class="flex items-center">
-							<li>
-								<button
-									id="login_button"
-									class="transition-all ease-in-out text-white hover:bg-slate-900 hover:scale-95 active:scale-90 duration-150 bg-slate-800 px-4 py-2 rounded-lg ml-8 float-right"
-								>
-									Log in
-								</button>
-
-								<button
-									id="logout_button"
-									class="transition-all ease-in-out text-white hover:bg-slate-900 hover:scale-95 active:scale-90 duration-150 bg-slate-800 px-4 py-2 rounded-lg ml-8 float-right"
-								>
-									Log out
-								</button>
-							</li>
-						</ul>
-					</nav>
-				</div>
-				<div class="flex justify-center md:p-20 lg:p-30 mb-20">
-					<div
-						class="p-4 md:p-20 lg:p-30 bg-slate-900 w-11/12 md:w-3/4 lg:w-8/12 flex flex-col text-white rounded-2xl shadow-cyan-300 hover:shadow-2xl hover:shadow-black transition-all ease-in-out duration-300 z-[2] md:mt-[-12rem] lg:mt-[-3rem] xl:mt-6"
+	<body class="bg-slate-900 h-screen">
+		<main class="bg-slate-950 md:px-20 lg:px-40 py-4 h-5/6">
+			<div class="py-10 mb-12">
+				<div class="flex flex-row-reverse">
+					<h1 class="text-xl font-mono transition duration-500 text-white cursor-default">
+						link-minifier
+					</h1>
+					<button
+						id="login_button"
+						class="transition-all ease-in-out text-white hover:bg-slate-900 hover:scale-95 active:scale-90 duration-150 bg-slate-800 px-4 py-2 rounded-lg mr-5"
+						type="button">
+						Log in
+					</button>
+					<button
+						id="logout_button"
+						class="transition-all ease-in-out text-white hover:bg-slate-900 hover:scale-95 active:scale-90 duration-150 bg-slate-800 px-4 py-2 rounded-lg float-right mt-[4.5rem]"
+						type="button"
 					>
-						<label>Link you want to minify:</label>
-						<input
-							id="normal_link_input"
-							placeholder="Enter the link here"
-							type="text"
-							class="p-2 rounded-md bg-slate-950 transition-all ease-in-out duration-150 mt-6 mb-2 mr-3 text-white min-w-full"
-						/>
-						<button
-							id="minify_button"
-							class="transition-all duration-150 ease-in-out hover:scale-[0.98] hover:bg-slate-700 active:scale-[0.96] text-white bg-slate-800 mt-2 mb-6 px-4 py-2 rounded-lg shadow-md"
-						>
-							Minify!
-						</button>
-						<div id="where_put_mini_link">Mini link:</div>
-					</div>
+						Log out
+					</button>
 				</div>
-			</main>
-			<footer class="flex justify-center md:py-[8rem] lg:py-[4rem] bg-slate-900 h-1/6">
-				<p>
-					<a
-						class="transition-all ease-in-out duration-150 text-white z-[1] hover:text-slate-400"
-						href="https://github.com/maddox05/link-minifier"
+			</div>
+			<div class="flex justify-center md:p-20 lg:p-30 mb-20">
+				<div
+					class="p-4 md:p-20 lg:p-30 bg-slate-900 w-11/12 md:w-3/4 lg:w-8/12 flex flex-col text-white rounded-2xl shadow-cyan-300 hover:shadow-2xl hover:shadow-black transition-all ease-in-out duration-300 z-[2]"
+				>
+					<label>Link you want to minify:</label>
+					<input
+						id="normal_link_input"
+						placeholder="Enter the link here"
+						type="text"
+						class="p-2 rounded-md bg-slate-950 transition-all ease-in-out duration-150 mt-6 mb-2 mr-3 text-white min-w-full"
+					/>
+					<button
+						id="minify_button"
+						class="transition-all duration-150 ease-in-out hover:scale-[0.98] hover:bg-slate-700 active:scale-[0.96] text-white bg-slate-800 mt-2 mb-6 px-4 py-2 rounded-lg shadow-md"
+						type="submit"
 					>
-						GitHub
-					</a>
-				</p>
-			</footer>
-		</div>
+						Minify!
+					</button>
+					<div id="where_put_mini_link">Mini link:</div>
+				</div>
+			</div>
+		</main>
+		<footer class="flex justify-center md:py-[8rem] lg:py-[4rem] bg-slate-900 h-1/6">
+			<a
+				class="transition-all ease-in-out duration-150 text-white z-[1] hover:text-slate-400"
+				href="https://github.com/maddox05/link-minifier"
+			>
+				GitHub
+			</a>
+		</footer>
 	</body>
 </html>
