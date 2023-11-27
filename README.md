@@ -57,8 +57,7 @@ This project is licensed under the [MIT License (click for details)](LICENSE).
 
 -   This project was inspired by the need for a simple and self-hosted URL shortening service.
 -   Thanks to [CtrlAltDelight](https://github.com/CtrlAltDelight) for all the help!
-    <!-- -   Thanks to [Light Andy](https://github.com/LightAndy1) for the new style! -->
-    <!-- You decide if you want to keep this ^^ :) -->
+-   Thanks to [Light Andy](https://github.com/LightAndy1) for the new style!
 
 ---
 
